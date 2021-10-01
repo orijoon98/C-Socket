@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     }
 
     //소켓 만들기
-    serv_sock = socket(PF_INET, SOCK_STREAM, 0);
+    serv_sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(serv_sock == -1)
         printf("socket error\n");
     
@@ -29,22 +29,24 @@ int main(int argc, char* argv[]){
     serv_addr.sin_port = htons(atoi(argv[1]));
 
     //프로세스를 소켓에 바인딩하기
-    if(bind(serv_sock,(struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1) //2번
+    if(bind(serv_sock,(struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1)
         printf("bind error\n");
 
     //연결 대기열 만들기
-    if(listen(serv_sock,5)==-1) //3번
+    if(listen(serv_sock,5)==-1)
         printf("listen error\n");
     
     //연결 대기열 가져오기
     clnt_addr_size = sizeof(clint_addr);
-    clint_sock = accept(serv_sock,(struct sockaddr*)&clint_addr,&clnt_addr_size); //4번
+    clint_sock = accept(serv_sock,(struct sockaddr*)&clint_addr,&clnt_addr_size);
     if(clint_sock == -1)
         printf("accept error\n");
 
+
+    //데이터 통신하기
     char message[] = "hello client";
-    write(clint_sock, message, sizeof(message)); //5번
-    close(serv_sock); //6번
+    write(clint_sock, message, sizeof(message));
+    close(serv_sock);
     close(clint_sock);
     return 0;
 }

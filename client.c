@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     }
 
     //소켓 만들기 
-    my_sock = socket(PF_INET,SOCK_STREAM,0); //1번
+    my_sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(my_sock == -1)
         printf("socket error \n");
     memset(&serv_addr,0,sizeof(serv_addr));
@@ -26,13 +26,15 @@ int main(int argc, char* argv[])
     serv_addr.sin_port=htons(atoi(argv[2]));
 
     //서버에 연결 요청하기
-    if(connect(my_sock,(struct sockaddr*)&serv_addr,sizeof(serv_addr))==-1) //2번
+    if(connect(my_sock,(struct sockaddr*)&serv_addr,sizeof(serv_addr))==-1)
         printf("connect error\n");
+
+    //데이터 통신하기
     char message[15];
-    str_len = read(my_sock,message,sizeof(message)-1); //3번
+    str_len = read(my_sock,message,sizeof(message)-1);
     if(str_len==-1)
         printf("read error\n");
     printf("서버에서 : %s \n", message);
-    close(my_sock); //4번
+    close(my_sock);
     return 0;
 }
