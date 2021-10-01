@@ -230,9 +230,9 @@ int main(int argc, char* argv[])
 ```
 
 ## 결과
+![스크린샷 2021-10-01 오전 10 21 51](https://user-images.githubusercontent.com/74812188/135551734-ac2118a9-1449-43ba-912b-0f9296124731.png)
 
-![스크린샷 2021-10-01 오전 10.21.51.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa859912-4318-41b9-9184-da0451fa4052/스크린샷_2021-10-01_오전_10.21.51.png)
+![스크린샷 2021-10-01 오전 10 22 58](https://user-images.githubusercontent.com/74812188/135551754-87ff4ea7-133c-4855-b214-ce9e0235e839.png)
 
-![스크린샷 2021-10-01 오전 10.22.58.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bcaad91f-51f6-423a-bce7-1d3811760c46/스크린샷_2021-10-01_오전_10.22.58.png)
+![스크린샷 2021-10-01 오전 10 23 31](https://user-images.githubusercontent.com/74812188/135551763-f82bdc08-f941-4dc1-b75a-1a825254448a.png)
 
-![스크린샷 2021-10-01 오전 10.23.31.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/900239ee-3f60-41f8-a1e6-b655ae03706c/스크린샷_2021-10-01_오전_10.23.31.png)
